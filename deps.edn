@@ -1,0 +1,13 @@
+{:paths ["src", "resources", "notebooks"]
+ :deps {io.github.nextjournal/clerk {:mvn/version "0.17.1102"}
+        com.github.vertical-blank/sql-formatter {:mvn/version "2.0.5"}
+        babashka/process {:mvn/version "0.5.22"}}
+ :aliases {:nextjournal/clerk
+           {:exec-fn nextjournal.clerk/build!
+            :exec-args {:index "notebooks/main.clj"}
+   ;; TODO: add all notebooks you want to have built ☝️
+   ;; if you just want to build one notebook, set `:index`
+
+   ;; optional list of aliases to include in the build
+            ; :nextjournal.clerk/aliases [:dev]
+            }}}
